@@ -65,7 +65,6 @@ export class ZeroDevClient {
         const kernelSmartAccount = kernelClient.account
         invariant(kernelSmartAccount, "kernelSmartAccount is undefined")
         const encodedCallData = await kernelSmartAccount.encodeCallData(callData)
-        // TODO Don't know why we need account here
         return kernelClient.sendUserOperation({
             account: kernelSmartAccount,
             userOperation: {
@@ -77,7 +76,6 @@ export class ZeroDevClient {
     async sendSimulatedUserOperation(kernelClient: CreateKernelAccountClientReturnType, userOperation: UserOperation) {
         const kernelSmartAccount = kernelClient.account
         invariant(kernelSmartAccount, "kernelSmartAccount is undefined")
-        // TODO Don't know why we need account here
         return kernelClient.sendUserOperation({
             account: kernelSmartAccount,
             userOperation,
